@@ -1,5 +1,7 @@
 const myLibrary = [];
 
+const book = (bookName, bookAuthor, bookPages) => ({ bookName, bookAuthor, bookPages });
+
 function createParagraph(text) {
   const paragraph = document.createElement('p');
   paragraph.innerHTML = text;
@@ -10,18 +12,18 @@ function displayBooks() {
   for (let index = 0; index < myLibrary.length; index += 1) {
     const element = myLibrary[index];
     const div = document.getElementById('cards');
-    div.appendChild(createParagraph(element[0]));
-    div.appendChild(createParagraph(element[1]));
-    div.appendChild(createParagraph(element[2]));
+    const { bookName, bookAuthor, bookPages } = element;
+    div.appendChild(createParagraph(bookName));
+    div.appendChild(createParagraph(bookAuthor));
+    div.appendChild(createParagraph(bookPages));
   }
 }
 
+const elementValue = (id) => document.getElementById(id).value;
+
 function addBookToLibrary() {
-  // do stuff here
-  const bookName = document.getElementById('bookName').value;
-  const bookAuthor = document.getElementById('bookAuthor').value;
-  const bookPages = document.getElementById('bookPages').value;
-  myLibrary.push([bookName, bookAuthor, bookPages]);
+  const newbook = book(elementValue('bookName'), elementValue('bookAuthor'), elementValue('bookPages'));
+  myLibrary.push(newbook);
   displayBooks();
 }
 
