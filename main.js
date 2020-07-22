@@ -2,6 +2,10 @@ const myLibrary = [];
 
 const Book = (name, author, pages) => ({ name, author, pages });
 
+const getDataFromInput = (idOrClass) => {
+  return document.querySelector(idOrClass).value
+};
+  
 const createElement = (tag, text) => {
   const element = document.createElement(tag);
   element.innerHTML = text;
