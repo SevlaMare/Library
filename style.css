@@ -24,3 +24,38 @@ h1 { text-align: center }
   border-radius: 5px;
   background: #fff;
 }
+
+.card-bg {
+  background-color: aqua;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* #region flex */
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.jc-c {
+  justify-content: center;
+}
+
+.jc-sa {
+  justify-content: space-around;
+}
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+.ai-c {
+  align-items: center;
+}
+/* #endregion flex */

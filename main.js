@@ -1,30 +1,26 @@
+import * as Nodes from './createNodes.js';
+import * as Styles from './styles.js';
+
 const myLibrary = [];
 
 const book = (bookName, bookAuthor, bookPages) => ({ bookName, bookAuthor, bookPages });
 
-function createParagraph(text) {
-  const paragraph = document.createElement('p');
-  paragraph.innerHTML = text;
-  return paragraph;
-}
-
-function displayBooks() {
-  for (let index = 0; index < myLibrary.length; index += 1) {
-    const element = myLibrary[index];
-    const div = document.getElementById('cards');
-    const { bookName, bookAuthor, bookPages } = element;
-    div.appendChild(createParagraph(bookName));
-    div.appendChild(createParagraph(bookAuthor));
-    div.appendChild(createParagraph(bookPages));
-  }
+function render(_newBook) {
+  const div = document.getElementById('cards');
+  const { bookName, bookAuthor, bookPages } = _newBook;
+  const card = Nodes.createElement( { tag: 'article', cssClass: Styles.card } );
+  card.appendChild(Nodes.createElement('h3', bookName));
+  card.appendChild(Nodes.createElement('p', bookAuthor));
+  card.appendChild(Nodes.createElement('p', bookPages));
+  div.appendChild(card);
 }
 
 const elementValue = (id) => document.getElementById(id).value;
 
 function addBookToLibrary() {
-  const newbook = book(elementValue('bookName'), elementValue('bookAuthor'), elementValue('bookPages'));
-  myLibrary.push(newbook);
-  displayBooks();
+  const newBook = book(elementValue('bookName'), elementValue('bookAuthor'), elementValue('bookPages'));
+  myLibrary.push(newBook);
+  render(newBook);
 }
 
 document.getElementById('btnGetBookData').addEventListener('click', addBookToLibrary);

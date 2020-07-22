@@ -1,0 +1,1 @@
+export const card = 'flex column jc-sa ai-c card-bg';
