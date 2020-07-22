@@ -1,4 +1,4 @@
-const myLibrary = [];
+const myLibrary = [];
 const Book = (name, author, pages) => ({ name, author, pages });
 
 
@@ -35,5 +35,15 @@ const render = (dictionary) => {
 };
 
 
+// TODO: split render x renderAll
+// const renderNew = (dictionary) => {
+//   for (let count = 0; count < dictionary.length; count += 1) {
+//     const element = myLibrary[count];
+//   }
+// }
+
 document.querySelector('#btn-submit')
   .addEventListener('click', addBookToLibrary);
+
+
+// TODO: export myLibrary to json
