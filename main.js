@@ -27,6 +27,6 @@ function addBookToLibrary() {
   displayBooks();
 }
 
-document
-  .getElementById('btnGetBookData')
-  .addEventListener('click', addBookToLibrary);
+document.querySelector('#btn-submit')
+  .addEventListener('click', addBookToLibrary);
+
