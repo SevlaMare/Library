@@ -8,16 +8,15 @@ const createElement = (tag, text) => {
   return element;
 };
 
-function displayBooks() {
-  for (let index = 0; index < myLibrary.length; index += 1) {
-    const element = myLibrary[index];
-    const div = document.getElementById('cards');
-    const { bookName, bookAuthor, bookPages } = element;
-    div.appendChild(createParagraph(bookName));
-    div.appendChild(createParagraph(bookAuthor));
-    div.appendChild(createParagraph(bookPages));
-  }
-}
+const addBookToLibrary = () => {
+  myLibrary.push(Book(
+    getDataFromInput("#bookName"),
+    getDataFromInput("#bookAuthor"),
+    getDataFromInput("#bookPages")
+  ));
+  return render(myLibrary)
+};
+
 
 const elementValue = (id) => document.getElementById(id).value;
 
