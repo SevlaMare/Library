@@ -1,6 +1,6 @@
 const myLibrary = [];
 
-const book = (bookName, bookAuthor, bookPages) => ({ bookName, bookAuthor, bookPages });
+const Book = (name, author, pages) => ({ name, author, pages });
 
 function createParagraph(text) {
   const paragraph = document.createElement('p');
@@ -27,4 +27,6 @@ function addBookToLibrary() {
   displayBooks();
 }
 
-document.getElementById('btnGetBookData').addEventListener('click', addBookToLibrary);
+document
+  .getElementById('btnGetBookData')
+  .addEventListener('click', addBookToLibrary);
