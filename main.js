@@ -1,16 +1,11 @@
 const myLibrary = [];
-
 const Book = (name, author, pages) => ({ name, author, pages });
+
 
 const getDataFromInput = (idOrClass) => {
   return document.querySelector(idOrClass).value
 };
-  
-const createElement = (tag, text) => {
-  const element = document.createElement(tag);
-  element.innerHTML = text;
-  return element;
-};
+
 
 const addBookToLibrary = () => {
   myLibrary.push(Book(
@@ -22,14 +17,23 @@ const addBookToLibrary = () => {
 };
 
 
-const elementValue = (id) => document.getElementById(id).value;
+// TODO: class as argument
+const createElement = (tag, text) => {
+  const element = document.createElement(tag);
+  element.innerHTML = text;
+  return element;
+};
 
-function addBookToLibrary() {
-  const newbook = book(elementValue('bookName'), elementValue('bookAuthor'), elementValue('bookPages'));
-  myLibrary.push(newbook);
-  displayBooks();
-}
+
+const render = (dictionary) => {
+  div = document.body
+  const { name, author, pages } = dictionary[0];
+
+  div.appendChild(createElement('p', name))
+  div.appendChild(createElement('p', author))
+  div.appendChild(createElement('p', pages))
+};
+
 
 document.querySelector('#btn-submit')
   .addEventListener('click', addBookToLibrary);
-
