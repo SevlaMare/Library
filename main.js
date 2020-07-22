@@ -2,6 +2,12 @@ const myLibrary = [];
 
 const Book = (name, author, pages) => ({ name, author, pages });
 
+const createElement = (tag, text) => {
+  const element = document.createElement(tag);
+  element.innerHTML = text;
+  return element;
+};
+
 function createParagraph(text) {
   const paragraph = document.createElement('p');
   paragraph.innerHTML = text;
