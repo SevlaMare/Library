@@ -8,12 +8,6 @@ const createElement = (tag, text) => {
   return element;
 };
 
-function createParagraph(text) {
-  const paragraph = document.createElement('p');
-  paragraph.innerHTML = text;
-  return paragraph;
-}
-
 function displayBooks() {
   for (let index = 0; index < myLibrary.length; index += 1) {
     const element = myLibrary[index];
