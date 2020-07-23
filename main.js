@@ -2,20 +2,20 @@ const myLibrary = [];
 const Book = (name, author, pages) => ({ name, author, pages });
 const getDataFromElement = idOrClass => document.querySelector(idOrClass).value;
 
-// TODO: class as argument
-const createElement = (tag, text) => {
+const createElement = (tag, text, className) => {
   const element = document.createElement(tag);
   element.innerHTML = text;
+  element.className = className;
   return element;
 };
 
 const render = dictionary => {
-  const div = document.body;
+  const placeHere = document.querySelector("#shelf");
   const { name, author, pages } = dictionary[0];
 
-  div.appendChild(createElement('p', name));
-  div.appendChild(createElement('p', author));
-  div.appendChild(createElement('p', pages));
+  placeHere.appendChild(createElement('p', name, 'card'));
+  placeHere.appendChild(createElement('p', author, 'card'));
+  placeHere.appendChild(createElement('p', pages, 'card'));
 };
 
 const addBookToLibrary = () => {

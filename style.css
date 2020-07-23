@@ -29,6 +29,7 @@ h1 { text-align: center }
   width: 80px;
   height: 90px;
   padding: 10px;
+  margin-right: 10px;
   color: #fff;
   background: #333;
 }
@@ -36,6 +37,7 @@ h1 { text-align: center }
 #shelf {
   display: flex;
   margin: 50px auto;
+  padding: 20px;
   width: 80%;
   height: 200px;
   background: #fff;
