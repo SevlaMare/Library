@@ -1,6 +1,6 @@
 const myLibrary = [];
 const Book = (name, author, pages) => ({ name, author, pages });
-const getDataFromInput = idOrClass => document.querySelector(idOrClass).value;
+const getDataFromElement = idOrClass => document.querySelector(idOrClass).value;
 
 // TODO: class as argument
 const createElement = (tag, text) => {
@@ -21,9 +21,9 @@ const render = dictionary => {
 const addBookToLibrary = () => {
   myLibrary.push(
     Book(
-      getDataFromInput('#bookName'),
-      getDataFromInput('#bookAuthor'),
-      getDataFromInput('#bookPages'),
+      getDataFromElement('#bookName'),
+      getDataFromElement('#bookAuthor'),
+      getDataFromElement('#bookPages'),
     ),
   );
   return render(myLibrary);

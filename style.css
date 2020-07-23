@@ -1,4 +1,4 @@
-body { background: #dfdedb; }
+body { background: #dfdedb }
 
 form {
   margin: 0 auto;
@@ -12,7 +12,7 @@ label {
   font-size: 1.2rem;
 }
 
-h1 { text-align: center; }
+h1 { text-align: center }
 
 .field {
   margin: 15px;
@@ -22,5 +22,21 @@ h1 { text-align: center; }
   font-size: 1.1rem;
   border: solid 3px #333;
   border-radius: 5px;
+  background: #fff;
+}
+
+.card {
+  width: 80px;
+  height: 90px;
+  padding: 10px;
+  color: #fff;
+  background: #333;
+}
+
+#shelf {
+  display: flex;
+  margin: 50px auto;
+  width: 80%;
+  height: 200px;
   background: #fff;
 }
