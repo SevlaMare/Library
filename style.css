@@ -18,7 +18,8 @@ h1 { text-align: center }
   margin: 15px;
 }
 
-#btnGetBookData {
+#btn-submit {
+  margin: 0 80px;
   font-size: 1.1rem;
   border: solid 3px #333;
   border-radius: 5px;
@@ -36,9 +37,11 @@ h1 { text-align: center }
 
 #shelf {
   display: flex;
+  flex-wrap: wrap;
   margin: 50px auto;
   padding: 20px;
   width: 80%;
-  height: 200px;
+  min-height: 200px;
+  border-radius: 30px;
   background: #fff;
 }
