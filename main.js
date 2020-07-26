@@ -5,7 +5,7 @@ const getDataFromElement = idOrClass => document.querySelector(idOrClass).value;
 
 const createElementX = (tag, className, text) => {
   const element = document.createElement(tag);
-  element.innerHTML = text;
+  text ? element.innerHTML = text : null;
   className ? element.className = className : null;
   return element;
 };
@@ -13,13 +13,10 @@ const createElementX = (tag, className, text) => {
 
 const render = (library) => {
   for (let book = 0; book < library.length; book += 1) {
-    // console.log(dictionary[count])
-
     const shelf = document.querySelector('#shelf');
     const { name, author, pages } = library[book];
 
-    const card = document.createElement('div')
-    card.className = "card"
+    const card = createElementX('div', 'card')
     card.appendChild(createElementX('p', null, name));
     card.appendChild(createElementX('p', null, author));
     card.appendChild(createElementX('p', null, pages));
