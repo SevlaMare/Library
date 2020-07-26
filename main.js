@@ -1,4 +1,7 @@
-const myLibrary = [];
+// create example to use onload!
+const myLibrary = [{name: "asd", author: "sdfgsd", pages: "321"}];
+// const myLibrary = [];
+
 const Book = (name, author, pages) => ({ name, author, pages });
 const getValueFromElement = idOrClass => document.querySelector(idOrClass).value;
 
@@ -10,8 +13,9 @@ const createElementX = (tag, className, text) => {
   return element;
 };
 
-// render without loop
+
 const render = (book) => {
+  // console.log(myLibrary)
   const shelf = document.querySelector('#shelf');
   const { name, author, pages } = book;
 
@@ -22,20 +26,23 @@ const render = (book) => {
   shelf.appendChild(card)
 };
 
-// call on load, render all books thought loop using render()
+
 const renderAll = (library) => {
+  // console.log("running ya")
+
   for (let book = 0; book < library.length; book += 1) {
-    const { name, author, pages } = library[book];
+    console.log(library)
+    render(library[book])
   }
 }
 
 
 const addBookToLibrary = () => {
-  book = Book(
-      getValueFromElement('#bookName'),
-      getValueFromElement('#bookAuthor'),
-      getValueFromElement('#bookPages')
-    )
+  const book = Book(
+    getValueFromElement('#bookName'),
+    getValueFromElement('#bookAuthor'),
+    getValueFromElement('#bookPages')
+  )
   myLibrary.push(book);
   return render(book);
 };
@@ -45,4 +52,6 @@ document
   .querySelector('#btn-submit')
   .addEventListener('click', addBookToLibrary);
 
-// TODO: export myLibrary to json
+
+document.body.onload = renderAll(myLibrary)
+// TODO: export myLibrary to json on cache
