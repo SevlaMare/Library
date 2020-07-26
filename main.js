@@ -27,9 +27,8 @@ const render = (book) => {
 };
 
 
+// TODO: map instead of loop
 const renderAll = (library) => {
-  // console.log("running ya")
-
   for (let book = 0; book < library.length; book += 1) {
     console.log(library)
     render(library[book])
