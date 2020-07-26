@@ -3,7 +3,7 @@ const Book = (name, author, pages) => ({ name, author, pages });
 const getDataFromElement = idOrClass => document.querySelector(idOrClass).value;
 
 
-const createElement = (tag, text, className) => {
+const createElement2 = (tag, className, text) => {
   const element = document.createElement(tag);
   element.innerHTML = text;
   element.className = className;
@@ -18,9 +18,14 @@ const render = (dictionary) => {
     const shelf = document.querySelector('#shelf');
     const { name, author, pages } = dictionary[count];
 
-    shelf.appendChild(createElement('p', name, 'card'));
-    shelf.appendChild(createElement('p', author, 'card'));
-    shelf.appendChild(createElement('p', pages, 'card'));
+    const card = document.createElement('div')
+    card.className = "card"
+  
+    card.appendChild(createElement2('p', null, name));
+    card.appendChild(createElement2('p', null, author));
+    card.appendChild(createElement2('p', null, pages));
+  
+    shelf.appendChild(card)
   }
 };
 
