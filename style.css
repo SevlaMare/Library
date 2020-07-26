@@ -15,11 +15,12 @@ label {
 h1 { text-align: center }
 
 .field {
-  margin: 15px;
+  margin: 15px auto;
+  padding: 3px 15px;
 }
 
 #btn-submit {
-  margin: 0 80px;
+  margin-left: 70px;
   font-size: 1.1rem;
   border: solid 3px #333;
   border-radius: 5px;
@@ -27,8 +28,8 @@ h1 { text-align: center }
 }
 
 .card {
-  width: 80px;
-  height: 90px;
+  width: 120px;
+  height: 140px;
   padding: 10px;
   margin-right: 10px;
   color: #fff;

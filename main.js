@@ -3,28 +3,26 @@ const Book = (name, author, pages) => ({ name, author, pages });
 const getDataFromElement = idOrClass => document.querySelector(idOrClass).value;
 
 
-const createElement2 = (tag, className, text) => {
+const createElementX = (tag, className, text) => {
   const element = document.createElement(tag);
   element.innerHTML = text;
-  element.className = className;
+  className ? element.className = className : null;
   return element;
 };
 
 
-const render = (dictionary) => {
-  for (let count = 0; count < dictionary.length; count += 1) {
-    console.log(dictionary[count])
+const render = (library) => {
+  for (let book = 0; book < library.length; book += 1) {
+    // console.log(dictionary[count])
 
     const shelf = document.querySelector('#shelf');
-    const { name, author, pages } = dictionary[count];
+    const { name, author, pages } = library[book];
 
     const card = document.createElement('div')
     card.className = "card"
-  
-    card.appendChild(createElement2('p', null, name));
-    card.appendChild(createElement2('p', null, author));
-    card.appendChild(createElement2('p', null, pages));
-  
+    card.appendChild(createElementX('p', null, name));
+    card.appendChild(createElementX('p', null, author));
+    card.appendChild(createElementX('p', null, pages));
     shelf.appendChild(card)
   }
 };
@@ -40,6 +38,7 @@ const addBookToLibrary = () => {
   );
   return render(myLibrary);
 };
+
 
 document
   .querySelector('#btn-submit')
