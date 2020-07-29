@@ -8,7 +8,7 @@ const book = (bookName, bookAuthor, bookPages) => ({ bookName, bookAuthor, bookP
 function render(_newBook) {
   const div = document.getElementById('cards');
   const { bookName, bookAuthor, bookPages } = _newBook;
-  const card = Nodes.createElement( { tag: 'article', cssClass: Styles.card } );
+  const card = Nodes.createElement('article', null, Styles.card);
   card.appendChild(Nodes.createElement('h3', bookName));
   card.appendChild(Nodes.createElement('p', bookAuthor));
   card.appendChild(Nodes.createElement('p', bookPages));
