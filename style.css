@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  margin: 20px auto;
+  width: fit-content;
+}
+
+.field {
+  padding: 5px;
+  width: 280px;
+  font-size: 1.2rem;
+  color: #fff;
+  background: #333;
+}
+
+.shelf {
+  min-width: 80%;
+  min-height: 200px;
+  background: lightgray;
+}

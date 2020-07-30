@@ -1,32 +1,36 @@
 const myLibrary = [];
 
-function Book(title, author, pages, readStatus) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.readStatus = readStatus;
-}
+const Book = (title, author, pages, readStatus) => ({
+  title, author, pages, readStatus
+})
 
-function render(book) {
-  const bookShelf = document.querySelector('.cards');
+const render = (book) => {
+  const { title, author, pages, readStatus } = book;
+  // title = book.title
+
+  const bookShelf = document.querySelector('.shelf');
   const card = document.createElement('div');
+
   const cardTitle = document.createElement('h2');
   const cardAuthor = document.createElement('p');
   const cardPages = document.createElement('p');
   const cardReadStatus = document.createElement('p');
-  cardTitle.innerHTML = book.title;
-  cardAuthor.innerHTML = book.author;
-  cardPages.innerHTML = book.pages;
-  cardReadStatus.innerHTML = book.readStatus ? 'you have read this book' : 'you haven\'t read this book yet';
+
+  cardTitle.innerHTML = title;
+  cardAuthor.innerHTML = author;
+  cardPages.innerHTML = pages;
+  cardReadStatus.innerHTML = readStatus ? 'you have read this book' : 'you haven\'t read this book yet';
+
   card.appendChild(cardTitle);
   card.appendChild(cardAuthor);
   card.appendChild(cardPages);
   card.appendChild(cardReadStatus);
+
   bookShelf.appendChild(card);
 }
 
-function addBookToLibrary() {
-  const newBook = new Book(
+const addBookToLibrary = () => {
+  const newBook = Book(
     document.querySelector('#title').value,
     document.querySelector('#author').value,
     document.querySelector('#pages').value,
@@ -36,4 +40,6 @@ function addBookToLibrary() {
   render(newBook);
 }
 
-document.querySelector('#submit').addEventListener('click', addBookToLibrary);
+document
+  .querySelector('#submit')
+  .addEventListener('click', addBookToLibrary);
