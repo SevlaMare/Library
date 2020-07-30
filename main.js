@@ -11,13 +11,17 @@ const render = (book) => {
 
   const bookShelf = document.querySelector('.shelf');
   const card = document.createElement('div');
-  card.className = "card"
 
+  const button = document.createElement('button')
   const cardTitle = document.createElement('h2');
   const cardAuthor = document.createElement('p');
   const cardPages = document.createElement('p');
   const cardReadStatus = document.createElement('p');
 
+  button.className = "deleteBtn"
+  card.className = "card"
+
+  button.innerHTML = "delete"
   cardTitle.innerHTML = title;
   cardAuthor.innerHTML = author;
   cardPages.innerHTML = pages;
@@ -27,6 +31,9 @@ const render = (book) => {
   card.appendChild(cardAuthor);
   card.appendChild(cardPages);
   card.appendChild(cardReadStatus);
+
+  button.addEventListener('click', deleteBook)
+  card.appendChild(button);
 
   bookShelf.appendChild(card);
 }
@@ -46,8 +53,22 @@ const displayElement = () => {
   document.querySelector("#form").className = ""
 }
 
+const hideElement = () => {
+  document.querySelector("#form").className = "hide"
+}
+
+const deleteBook = () => {
+  event.target.parentNode.remove()
+}
+
 document.querySelector('#submit')
   .addEventListener('click', addBookToLibrary);
 
+  document.querySelector('#submit')
+  .addEventListener('click', hideElement);
+
 document.querySelector('#newBook')
   .addEventListener('click', displayElement)
+
+// document.querySelector('.deleteBtn')
+//   .addEventListener('click', deleteBook)
