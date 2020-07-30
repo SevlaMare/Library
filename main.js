@@ -4,9 +4,19 @@ const Book = (title, author, pages, readStatus) => ({
   title, author, pages, readStatus
 })
 
+
+// TODO: accepts more args, form innerHTML.<property>
+const createCustomElement = (tag, className, writeText) => {
+  const element = document.createElement(tag);
+  // text ? element.innerHTML = text : null;
+  // className ? element.className = className : null;
+  return element;
+};
+
+card.appendChild(createElementX('p', null, name)); 
+
 const render = (book) => {
   const { title, author, pages, readStatus } = book;
-  // title = book.title
 
   const bookShelf = document.querySelector('.shelf');
   const card = document.createElement('div');
