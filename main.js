@@ -1,25 +1,17 @@
 const myLibrary = [];
 
+
 const Book = (title, author, pages, readStatus) => ({
   title, author, pages, readStatus
 })
 
-
-// TODO: accepts more args, form innerHTML.<property>
-const createCustomElement = (tag, className, writeText) => {
-  const element = document.createElement(tag);
-  // text ? element.innerHTML = text : null;
-  // className ? element.className = className : null;
-  return element;
-};
-
-card.appendChild(createElementX('p', null, name)); 
 
 const render = (book) => {
   const { title, author, pages, readStatus } = book;
 
   const bookShelf = document.querySelector('.shelf');
   const card = document.createElement('div');
+  card.className = "card"
 
   const cardTitle = document.createElement('h2');
   const cardAuthor = document.createElement('p');
@@ -50,6 +42,12 @@ const addBookToLibrary = () => {
   render(newBook);
 }
 
-document
-  .querySelector('#submit')
+const displayElement = () => {
+  document.querySelector("#form").className = ""
+}
+
+document.querySelector('#submit')
   .addEventListener('click', addBookToLibrary);
+
+document.querySelector('#newBook')
+  .addEventListener('click', displayElement)

@@ -17,7 +17,21 @@ form {
 }
 
 .shelf {
+  display: flex;
+  flex-wrap: wrap;
   min-width: 80%;
   min-height: 200px;
   background: lightgray;
 }
+
+.card {
+  width: 120px;
+  height: 140px;
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  color: #fff;
+  background: #333;
+}
+
+.hidden { display: none; }
