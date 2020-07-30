@@ -48,7 +48,7 @@ const render = (book) => {
   card.className = 'card';
 
   checkbox.innerHTML = 'read it already?';
-  checkbox.checked = false;
+  checkbox.checked = readStatus;
   checkbox.type = 'checkbox';
   button.innerHTML = 'delete';
   cardTitle.innerHTML = title;

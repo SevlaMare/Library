@@ -1,32 +1,35 @@
-* {
-  margin: 0;
-  padding: 0;
-}
+body { background: #dfdedb }
 
 form {
-  margin: 20px auto;
+  margin: 0 auto;
   width: fit-content;
-}
-
-.field {
   padding: 5px;
-  width: 280px;
-  font-size: 1.2rem;
-  color: #fff;
   background: #333;
 }
 
-.shelf {
-  display: flex;
-  flex-wrap: wrap;
-  min-width: 80%;
-  min-height: 200px;
-  background: lightgray;
+label {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+h1 { text-align: center }
+
+.field {
+  margin: 15px auto;
+  padding: 3px 15px;
+}
+
+#btn-submit {
+  margin-left: 70px;
+  font-size: 1.1rem;
+  border: solid 3px #333;
+  border-radius: 5px;
+  background: #fff;
 }
 
 .card {
-  width: 120px;
-  height: 140px;
+  min-width: 120px;
+  min-height: 140px;
   padding: 10px;
   margin-right: 10px;
   margin-bottom: 15px;
@@ -34,4 +37,20 @@ form {
   background: #333;
 }
 
+.shelf {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px auto;
+  padding: 20px;
+  min-width: 80%;
+  min-height: 200px;
+  border-radius: 30px;
+  background: #fff;
+}
+
 .hide { display: none; }
+
+.center {
+  width: fit-content;
+  margin: 20px auto;
+}
