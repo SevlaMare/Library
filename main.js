@@ -83,21 +83,13 @@ const addBookToLibrary = () => {
   render(newBook);
 };
 
-
-
-// document.querySelector('#submit')
-//   .addEventListener('submit', addBookToLibrary);
-
 document.querySelector('#form')
   .addEventListener('submit', (event) => {
-  addBookToLibrary();
-  hideElement();
-  event.preventDefault();
-  document.querySelector('#form').reset()
-})
-
-// document.querySelector('#submit')
-//   .addEventListener('click', hideElement);
+    addBookToLibrary();
+    hideElement();
+    event.preventDefault();
+    document.querySelector('#form').reset();
+  });
 
 document.querySelector('#newBook')
   .addEventListener('click', displayElement);
