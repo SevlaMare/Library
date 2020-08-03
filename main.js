@@ -21,11 +21,11 @@ const changeReadStatus = () => {
   const elem = window.event.currentTarget;
   const elemParent = elem.parentNode;
   if (elem.checked) {
-    document.querySelector(`#readStatus${elemParent.id}`).innerHTML = 'You have read this book';
+    document.querySelector(`#readStatus${elemParent.id}`).innerHTML = 'Already read';
     myLibrary[elemParent.id].readStatus = true;
   } else {
     myLibrary[elemParent.id].readStatus = false;
-    document.querySelector(`#readStatus${elemParent.id}`).innerHTML = 'You haven\'t read this book yet';
+    document.querySelector(`#readStatus${elemParent.id}`).innerHTML = 'Will read';
   }
 };
 
@@ -54,7 +54,7 @@ const render = (book) => {
   cardTitle.innerHTML = title;
   cardAuthor.innerHTML = author;
   cardPages.innerHTML = pages;
-  cardReadStatus.innerHTML = readStatus ? 'You have read this book' : 'You haven\'t read this book yet';
+  cardReadStatus.innerHTML = readStatus ? 'Already read' : 'Will read';
   cardReadStatus.id = `readStatus${id}`;
 
   button.addEventListener('click', deleteBook);
@@ -83,11 +83,21 @@ const addBookToLibrary = () => {
   render(newBook);
 };
 
-document.querySelector('#submit')
-  .addEventListener('click', addBookToLibrary);
 
-document.querySelector('#submit')
-  .addEventListener('click', hideElement);
+
+// document.querySelector('#submit')
+//   .addEventListener('submit', addBookToLibrary);
+
+document.querySelector('#form')
+  .addEventListener('submit', (event) => {
+  addBookToLibrary();
+  hideElement();
+  event.preventDefault();
+  document.querySelector('#form').reset()
+})
+
+// document.querySelector('#submit')
+//   .addEventListener('click', hideElement);
 
 document.querySelector('#newBook')
   .addEventListener('click', displayElement);
